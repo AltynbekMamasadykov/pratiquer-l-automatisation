@@ -1,6 +1,6 @@
-package homepage.cloudCalculator;
+package page.cloudCalculator;
 
-import homepage.BasePage;
+import page.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

@@ -1,7 +1,6 @@
-package homepage.Yopmail;
+package page.Yopmail;
 
-import homepage.BasePage;
-import homepage.cloudCalculator.EmailEstimateResult;
+import page.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

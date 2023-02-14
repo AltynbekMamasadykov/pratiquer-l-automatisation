@@ -1,11 +1,11 @@
 package test;
-import homepage.Yopmail.YopmailHomePage;
-import homepage.Yopmail.YopmailIndex;
-import homepage.cloudCalculator.CloudPricingCalculatorPage;
-import homepage.cloudCalculator.CloudPricingCalculatorResult;
-import homepage.cloudCalculator.EmailEstimateResult;
-import homepage.cloudSearch.CloudSearchPage;
-import homepage.cloudSearch.CloudSearchResultPage;
+import page.Yopmail.YopmailHomePage;
+import page.Yopmail.YopmailIndex;
+import page.cloudCalculator.CloudPricingCalculatorPage;
+import page.cloudCalculator.CloudPricingCalculatorResult;
+import page.cloudCalculator.EmailEstimateResult;
+import page.cloudSearch.CloudSearchPage;
+import page.cloudSearch.CloudSearchResultPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,7 +14,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
 import java.util.ArrayList;
 
 
