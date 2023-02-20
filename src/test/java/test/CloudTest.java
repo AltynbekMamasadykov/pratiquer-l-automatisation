@@ -55,7 +55,7 @@ public class CloudTest {
     }
 
     @Test
-    public void GoogleCloudPricingCalculator() throws InterruptedException {
+    public void GoogleCloudPricingCalculator() {
         CloudSearchPage cloudSearchPage = new CloudSearchPage(driver);
         CloudSearchResultPage cloudSearchResultPage = new CloudSearchResultPage(driver);
         CloudPricingCalculatorPage cloudPricingCalculatorPage = new CloudPricingCalculatorPage(driver);
