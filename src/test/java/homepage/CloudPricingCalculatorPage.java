@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CloudPricingCalculatorPage extends BasePage{
 
-    @FindBy(xpath = "//*[@id='input_92']")
+    @FindBy(xpath = "//*[contains(text(),'Number of instances')]/following-sibling::input")
     private WebElement instanceNumberInputField;
 
     @FindBy(xpath = "//label[text()='Provisioning model']/..")
