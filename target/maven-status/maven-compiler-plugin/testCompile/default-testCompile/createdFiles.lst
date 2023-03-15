@@ -1,0 +1,13 @@
+pages\GoogleCloudSearchResultPage.class
+pages\GoogleCloudPricingCalculatorPage.class
+pages\YopmailHandler.class
+test\CommonConditions.class
+test\TestCalculatorPage.class
+test\FrameworkTest.class
+model\GoogleCloudPricingCalculator.class
+pages\GoogleCloudSearchPage.class
+util\TestListener.class
+service\GoogleCloudPricingCalculatorCreator.class
+pages\AbstractBasePage.class
+service\TestDataReader.class
+driver\DriverSingleton.class
