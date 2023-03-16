@@ -104,6 +104,7 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
         addGPUsCheckBox.click();
 
         //GPU Type
+
         webDriverWait().until(ExpectedConditions.elementToBeClickable(gpuTypeDropdown));
         javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", gpuTypeDropdown);
         gpuTypeDropdown.click();
@@ -147,8 +148,13 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
     }
 
     public GoogleCloudPricingCalculatorPage switchToFrame(WebDriver driver) {
-        driver.switchTo().frame(0);
-        driver.switchTo().frame("myFrame");
+//        driver.switchTo().frame(0);
+//        driver.switchTo().frame("myFrame");
+        WebElement iframe1 = webDriverWait().until(ExpectedConditions.presenceOfElementLocated(By.xpath("//devsite-iframe//iframe")));
+        driver.switchTo().frame(iframe1);
+        WebElement iframe2 = webDriverWait().until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div//iframe[@id='myFrame']")));
+        driver.switchTo().frame(iframe2);
+        logger.info("switch to frame");
         return new GoogleCloudPricingCalculatorPage(driver);
     }
 
