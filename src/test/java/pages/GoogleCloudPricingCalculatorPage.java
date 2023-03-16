@@ -148,11 +148,14 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
     }
 
     public GoogleCloudPricingCalculatorPage switchToFrame(WebDriver driver) {
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
 //        driver.switchTo().frame(0);
 //        driver.switchTo().frame("myFrame");
         WebElement iframe1 = webDriverWait().until(ExpectedConditions.presenceOfElementLocated(By.xpath("//devsite-iframe//iframe")));
+        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", iframe1);
         driver.switchTo().frame(iframe1);
         WebElement iframe2 = webDriverWait().until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div//iframe[@id='myFrame']")));
+        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", iframe2);
         driver.switchTo().frame(iframe2);
         logger.info("switch to frame");
         return new GoogleCloudPricingCalculatorPage(driver);
