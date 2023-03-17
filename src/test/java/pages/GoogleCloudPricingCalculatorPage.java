@@ -98,15 +98,15 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
         webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicProvisionSelector(calculator.getProvisioningModel()))));
         WebElement provisionType = driver.findElement(By.xpath(dynamicProvisionSelector(calculator.getProvisioningModel())));
         provisionType.click();
-//
-//        //Series
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(seriesDropdown));
-//        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", seriesDropdown);
-//        seriesDropdown.click();
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicSeriesSelector(calculator.getSeries()))));
-//        WebElement serie = driver.findElement(By.xpath(dynamicSeriesSelector(calculator.getSeries())));
-//        serie.click();
-//
+
+        //Series
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(seriesDropdown));
+        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", seriesDropdown);
+        seriesDropdown.click();
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicSeriesSelector(calculator.getSeries()))));
+        WebElement serie = driver.findElement(By.xpath(dynamicSeriesSelector(calculator.getSeries())));
+        serie.click();
+
 //        //Machine Type
 //        webDriverWait().until(ExpectedConditions.elementToBeClickable(machineTypeDropdown));
 //        machineTypeDropdown.click();
