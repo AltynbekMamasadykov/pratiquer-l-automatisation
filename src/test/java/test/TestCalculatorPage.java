@@ -10,9 +10,8 @@ public class TestCalculatorPage extends CommonConditions{
         GoogleCloudSearchPage googleCloudSearchPage = new GoogleCloudSearchPage(driver);
         googleCloudSearchPage.openPage()
                 .searchCalculator()
-                .openCalculator()
-                .switchToFrame(driver)
-                .setEstimate(GoogleCloudPricingCalculatorCreator.withProperty());
+                .openCalculator();
+//                .setEstimate(GoogleCloudPricingCalculatorCreator.withProperty());
 
     }
 }

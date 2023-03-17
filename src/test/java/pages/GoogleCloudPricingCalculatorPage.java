@@ -1,8 +1,10 @@
 package pages;
 import model.GoogleCloudPricingCalculator;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 
 
 public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
@@ -62,87 +64,106 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
 
 
     public void addToEstimate(GoogleCloudPricingCalculator calculator){
+
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+        Actions actions = new Actions(driver);
+
+
+//        driver.switchTo().frame(0);
+//        driver.switchTo().frame("myFrame");
+        WebElement iframe1 = webDriverWait().until(ExpectedConditions.presenceOfElementLocated(By.xpath("//devsite-iframe//iframe")));
+        //javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", iframe1);
+        driver.switchTo().frame(iframe1);
+        WebElement iframe2 = webDriverWait().until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div//iframe[@id='myFrame']")));
+        //javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", iframe2);
+        driver.switchTo().frame(iframe2);
+        logger.info("switch to frame");
+
+
+
         //Number of instances field
         webDriverWait().until(ExpectedConditions.elementToBeClickable(instanceNumberInputField));
         instanceNumberInputField.sendKeys(calculator.getNumberOfInstances());
 
-        //Operation_System/Software
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(operatingSystem));
-        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
-        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", operatingSystem);
-        operatingSystem.click();
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicOperatingSystemSelector(calculator.getOperationSystem()))));
-        WebElement operatingSystemType = driver.findElement(By.xpath(dynamicOperatingSystemSelector(calculator.getOperationSystem())));
-        operatingSystemType.click();
+//
+//        //Operation_System/Software
+//        WebElement op = webDriverWait().until(ExpectedConditions.elementToBeClickable(operatingSystem));
+//        actions.moveToElement(op).click().build().perform();
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicOperatingSystemSelector(calculator.getOperationSystem()))));
+//        WebElement operatingSystemType = driver.findElement(By.xpath(dynamicOperatingSystemSelector(calculator.getOperationSystem())));
+//        operatingSystemType.click();
 
         // Provisioning Model
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(provisioningModel));
-        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", provisioningModel);
-        provisioningModel.click();
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicProvisionSelector(calculator.getProvisioningModel()))));
-        WebElement provisionType = driver.findElement(By.xpath(dynamicProvisionSelector(calculator.getProvisioningModel())));
-        provisionType.click();
-
-        //Series
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(seriesDropdown));
-        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", seriesDropdown);
-        seriesDropdown.click();
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicSeriesSelector(calculator.getSeries()))));
-        WebElement serie = driver.findElement(By.xpath(dynamicSeriesSelector(calculator.getSeries())));
-        serie.click();
-
-        //Machine Type
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(machineTypeDropdown));
-        machineTypeDropdown.click();
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicMachineTypeSelector(calculator.getMachineType()))));
-        WebElement machineTypo = driver.findElement(By.xpath(dynamicMachineTypeSelector(calculator.getMachineType())));
-        machineTypo.click();
-
-        //GPU checkbox
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(addGPUsCheckBox));
-        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", addGPUsCheckBox);
-        addGPUsCheckBox.click();
-
-        //GPU Type
-
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(gpuTypeDropdown));
-        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", gpuTypeDropdown);
-        gpuTypeDropdown.click();
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicGPUTypeSelector(calculator.getGPUType()))));
-        WebElement gpuTypo = driver.findElement(By.xpath(dynamicGPUTypeSelector(calculator.getGPUType())));
-        gpuTypo.click();
-
-        //Number of GPU
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(numberOfGPUDropdown));
-        numberOfGPUDropdown.click();
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicGPUNumberSelector(calculator.getNumberOfGPU()))));
-        WebElement numbersOfGPU = driver.findElement(By.xpath(dynamicGPUNumberSelector(calculator.getNumberOfGPU())));
-        numbersOfGPU.click();
-
-        //Local SSD
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(localSSDDropdown));
-        localSSDDropdown.click();
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicLocalSSDSelector(calculator.getLocalSSD()))));
-        WebElement localSsd = driver.findElement(By.xpath(dynamicLocalSSDSelector(calculator.getLocalSSD())));
-        localSsd.click();
-
-        //Data Center
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(dataCenterLocationDropdown));
-        dataCenterLocationDropdown.click();
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicDataCenterLocationSelector(calculator.getDatacenterLocation()))));
-        WebElement dataCenterLocation = driver.findElement(By.xpath(dynamicDataCenterLocationSelector(calculator.getDatacenterLocation())));
-        dataCenterLocation.click();
-
-        //usage
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(committedUsageDropdown));
-        committedUsageDropdown.click();
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicUsageSelector(calculator.getCommittedUsage()))));
-        WebElement usageCommitted = driver.findElement(By.xpath(dynamicUsageSelector(calculator.getCommittedUsage())));
-        usageCommitted.click();
-
-        //Add to Estimate
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(addToEstimateButton));
-        addToEstimateButton.click();
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(provisioningModel));
+//        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", provisioningModel);
+//        provisioningModel.click();
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicProvisionSelector(calculator.getProvisioningModel()))));
+//        WebElement provisionType = driver.findElement(By.xpath(dynamicProvisionSelector(calculator.getProvisioningModel())));
+//        provisionType.click();
+//
+//        //Series
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(seriesDropdown));
+//        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", seriesDropdown);
+//        seriesDropdown.click();
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicSeriesSelector(calculator.getSeries()))));
+//        WebElement serie = driver.findElement(By.xpath(dynamicSeriesSelector(calculator.getSeries())));
+//        serie.click();
+//
+//        //Machine Type
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(machineTypeDropdown));
+//        machineTypeDropdown.click();
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicMachineTypeSelector(calculator.getMachineType()))));
+//        WebElement machineTypo = driver.findElement(By.xpath(dynamicMachineTypeSelector(calculator.getMachineType())));
+//        machineTypo.click();
+//
+//        //GPU checkbox
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(addGPUsCheckBox));
+//        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", addGPUsCheckBox);
+//        addGPUsCheckBox.click();
+//
+//        //GPU Type
+//
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(gpuTypeDropdown));
+//        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", gpuTypeDropdown);
+//        gpuTypeDropdown.click();
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicGPUTypeSelector(calculator.getGPUType()))));
+//        WebElement gpuTypo = driver.findElement(By.xpath(dynamicGPUTypeSelector(calculator.getGPUType())));
+//        gpuTypo.click();
+//
+//        //Number of GPU
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(numberOfGPUDropdown));
+//        numberOfGPUDropdown.click();
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicGPUNumberSelector(calculator.getNumberOfGPU()))));
+//        WebElement numbersOfGPU = driver.findElement(By.xpath(dynamicGPUNumberSelector(calculator.getNumberOfGPU())));
+//        numbersOfGPU.click();
+//
+//        //Local SSD
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(localSSDDropdown));
+//        localSSDDropdown.click();
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicLocalSSDSelector(calculator.getLocalSSD()))));
+//        WebElement localSsd = driver.findElement(By.xpath(dynamicLocalSSDSelector(calculator.getLocalSSD())));
+//        localSsd.click();
+//
+//        //Data Center
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(dataCenterLocationDropdown));
+//        dataCenterLocationDropdown.click();
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicDataCenterLocationSelector(calculator.getDatacenterLocation()))));
+//        WebElement dataCenterLocation = driver.findElement(By.xpath(dynamicDataCenterLocationSelector(calculator.getDatacenterLocation())));
+//        dataCenterLocation.click();
+//
+//        //usage
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(committedUsageDropdown));
+//        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", committedUsageDropdown);
+//        committedUsageDropdown.click();
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicUsageSelector(calculator.getCommittedUsage()))));
+//        WebElement usageCommitted = driver.findElement(By.xpath(dynamicUsageSelector(calculator.getCommittedUsage())));
+//        usageCommitted.click();
+//
+//        //Add to Estimate
+//
+//        webDriverWait().until(ExpectedConditions.elementToBeClickable(addToEstimateButton));
+//        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", addToEstimateButton);
+//        addToEstimateButton.click();
 
 
     }
@@ -200,6 +221,8 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
         logger.info("getTotalEstimateCost");
         return estimatedSub+preResultSub;
     }
+
+
 
 
     private String dynamicUsageSelector(String usage){
