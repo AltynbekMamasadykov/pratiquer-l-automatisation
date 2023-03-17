@@ -150,21 +150,21 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
         webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicDataCenterLocationSelector(calculator.getDatacenterLocation()))));
         WebElement dataCenterLocation = driver.findElement(By.xpath(dynamicDataCenterLocationSelector(calculator.getDatacenterLocation())));
         dataCenterLocation.click();
-        logger.info("Here");
 
-//        //usage
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(committedUsageDropdown));
-//        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", committedUsageDropdown);
-//        committedUsageDropdown.click();
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicUsageSelector(calculator.getCommittedUsage()))));
-//        WebElement usageCommitted = driver.findElement(By.xpath(dynamicUsageSelector(calculator.getCommittedUsage())));
-//        usageCommitted.click();
-//
-//        //Add to Estimate
-//
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(addToEstimateButton));
-//        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", addToEstimateButton);
-//        addToEstimateButton.click();
+
+        //usage
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(committedUsageDropdown));
+        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", committedUsageDropdown);
+        committedUsageDropdown.click();
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicUsageSelector(calculator.getCommittedUsage()))));
+        WebElement usageCommitted = driver.findElement(By.xpath(dynamicUsageSelector(calculator.getCommittedUsage())));
+        usageCommitted.click();
+
+        //Add to Estimate
+
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(addToEstimateButton));
+        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", addToEstimateButton);
+        addToEstimateButton.click();
 
 
     }
