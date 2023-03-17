@@ -122,7 +122,6 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
 
 
         //GPU Type
-
         webDriverWait().until(ExpectedConditions.elementToBeClickable(gpuTypeDropdown));
         javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", gpuTypeDropdown);
         gpuTypeDropdown.click();
@@ -136,22 +135,23 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
         webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicGPUNumberSelector(calculator.getNumberOfGPU()))));
         WebElement numbersOfGPU = driver.findElement(By.xpath(dynamicGPUNumberSelector(calculator.getNumberOfGPU())));
         numbersOfGPU.click();
+
+
+        //Local SSD
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(localSSDDropdown));
+        localSSDDropdown.click();
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicLocalSSDSelector(calculator.getLocalSSD()))));
+        WebElement localSsd = driver.findElement(By.xpath(dynamicLocalSSDSelector(calculator.getLocalSSD())));
+        localSsd.click();
+
+        //Data Center
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(dataCenterLocationDropdown));
+        dataCenterLocationDropdown.click();
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicDataCenterLocationSelector(calculator.getDatacenterLocation()))));
+        WebElement dataCenterLocation = driver.findElement(By.xpath(dynamicDataCenterLocationSelector(calculator.getDatacenterLocation())));
+        dataCenterLocation.click();
         logger.info("Here");
-//
-//        //Local SSD
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(localSSDDropdown));
-//        localSSDDropdown.click();
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicLocalSSDSelector(calculator.getLocalSSD()))));
-//        WebElement localSsd = driver.findElement(By.xpath(dynamicLocalSSDSelector(calculator.getLocalSSD())));
-//        localSsd.click();
-//
-//        //Data Center
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(dataCenterLocationDropdown));
-//        dataCenterLocationDropdown.click();
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicDataCenterLocationSelector(calculator.getDatacenterLocation()))));
-//        WebElement dataCenterLocation = driver.findElement(By.xpath(dynamicDataCenterLocationSelector(calculator.getDatacenterLocation())));
-//        dataCenterLocation.click();
-//
+
 //        //usage
 //        webDriverWait().until(ExpectedConditions.elementToBeClickable(committedUsageDropdown));
 //        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", committedUsageDropdown);
