@@ -119,23 +119,24 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
         webDriverWait().until(ExpectedConditions.elementToBeClickable(addGPUsCheckBox));
         javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", addGPUsCheckBox);
         addGPUsCheckBox.click();
+
+
+        //GPU Type
+
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(gpuTypeDropdown));
+        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", gpuTypeDropdown);
+        gpuTypeDropdown.click();
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicGPUTypeSelector(calculator.getGPUType()))));
+        WebElement gpuTypo = driver.findElement(By.xpath(dynamicGPUTypeSelector(calculator.getGPUType())));
+        gpuTypo.click();
+
+        //Number of GPU
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(numberOfGPUDropdown));
+        numberOfGPUDropdown.click();
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicGPUNumberSelector(calculator.getNumberOfGPU()))));
+        WebElement numbersOfGPU = driver.findElement(By.xpath(dynamicGPUNumberSelector(calculator.getNumberOfGPU())));
+        numbersOfGPU.click();
         logger.info("Here");
-//
-//        //GPU Type
-//
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(gpuTypeDropdown));
-//        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", gpuTypeDropdown);
-//        gpuTypeDropdown.click();
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicGPUTypeSelector(calculator.getGPUType()))));
-//        WebElement gpuTypo = driver.findElement(By.xpath(dynamicGPUTypeSelector(calculator.getGPUType())));
-//        gpuTypo.click();
-//
-//        //Number of GPU
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(numberOfGPUDropdown));
-//        numberOfGPUDropdown.click();
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicGPUNumberSelector(calculator.getNumberOfGPU()))));
-//        WebElement numbersOfGPU = driver.findElement(By.xpath(dynamicGPUNumberSelector(calculator.getNumberOfGPU())));
-//        numbersOfGPU.click();
 //
 //        //Local SSD
 //        webDriverWait().until(ExpectedConditions.elementToBeClickable(localSSDDropdown));
