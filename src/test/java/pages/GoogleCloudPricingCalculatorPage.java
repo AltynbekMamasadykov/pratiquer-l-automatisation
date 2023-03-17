@@ -107,13 +107,13 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
         WebElement serie = driver.findElement(By.xpath(dynamicSeriesSelector(calculator.getSeries())));
         serie.click();
 
-//        //Machine Type
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(machineTypeDropdown));
-//        machineTypeDropdown.click();
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicMachineTypeSelector(calculator.getMachineType()))));
-//        WebElement machineTypo = driver.findElement(By.xpath(dynamicMachineTypeSelector(calculator.getMachineType())));
-//        machineTypo.click();
-//
+        //Machine Type
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(machineTypeDropdown));
+        machineTypeDropdown.click();
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicMachineTypeSelector(calculator.getMachineType()))));
+        WebElement machineTypo = driver.findElement(By.xpath(dynamicMachineTypeSelector(calculator.getMachineType())));
+        machineTypo.click();
+
 //        //GPU checkbox
 //        webDriverWait().until(ExpectedConditions.elementToBeClickable(addGPUsCheckBox));
 //        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", addGPUsCheckBox);
