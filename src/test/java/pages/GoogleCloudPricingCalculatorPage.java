@@ -67,8 +67,6 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
 
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
         Actions actions = new Actions(driver);
-
-
 //        driver.switchTo().frame(0);
 //        driver.switchTo().frame("myFrame");
         WebElement iframe1 = webDriverWait().until(ExpectedConditions.presenceOfElementLocated(By.xpath("//devsite-iframe//iframe")));
@@ -85,13 +83,13 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
         webDriverWait().until(ExpectedConditions.elementToBeClickable(instanceNumberInputField));
         instanceNumberInputField.sendKeys(calculator.getNumberOfInstances());
 
-//
-//        //Operation_System/Software
-//        WebElement op = webDriverWait().until(ExpectedConditions.elementToBeClickable(operatingSystem));
-//        actions.moveToElement(op).click().build().perform();
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicOperatingSystemSelector(calculator.getOperationSystem()))));
-//        WebElement operatingSystemType = driver.findElement(By.xpath(dynamicOperatingSystemSelector(calculator.getOperationSystem())));
-//        operatingSystemType.click();
+
+        //Operation_System/Software
+        WebElement op = webDriverWait().until(ExpectedConditions.elementToBeClickable(operatingSystem));
+        actions.moveToElement(op).click().build().perform();
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicOperatingSystemSelector(calculator.getOperationSystem()))));
+        WebElement operatingSystemType = driver.findElement(By.xpath(dynamicOperatingSystemSelector(calculator.getOperationSystem())));
+        operatingSystemType.click();
 
         // Provisioning Model
 //        webDriverWait().until(ExpectedConditions.elementToBeClickable(provisioningModel));
