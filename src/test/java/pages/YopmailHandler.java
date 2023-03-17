@@ -60,11 +60,17 @@ public class YopmailHandler extends AbstractBasePage{
         return webDriverWait().until(ExpectedConditions.visibilityOf(estimationResultLine)).getText();
     }
 
-    public YopmailHandler getNewYopmail(){
+    public GoogleCloudPricingCalculatorPage getNewYopmail(){
         openPage();
         clickEmailGenerator();
         copyToClipBoard();
-        return this;
+        ArrayList<String> tabs = new ArrayList<> (driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(0));
+        driver.switchTo().frame(0);
+        driver.switchTo().frame("myFrame");
+        logger.info("Switch back to Calculator page");
+        return new GoogleCloudPricingCalculatorPage(driver);
+
     }
 
     public GoogleCloudPricingCalculatorPage backSwitchToCalcPage(WebDriver driver){

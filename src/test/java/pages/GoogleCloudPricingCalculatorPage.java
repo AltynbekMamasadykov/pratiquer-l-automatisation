@@ -67,8 +67,6 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
 
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
         Actions actions = new Actions(driver);
-//        driver.switchTo().frame(0);
-//        driver.switchTo().frame("myFrame");
         WebElement iframe1 = webDriverWait().until(ExpectedConditions.presenceOfElementLocated(By.xpath("//devsite-iframe//iframe")));
         //javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", iframe1);
         driver.switchTo().frame(iframe1);
@@ -77,12 +75,9 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
         driver.switchTo().frame(iframe2);
         logger.info("switch to frame");
 
-
-
         //Number of instances field
         webDriverWait().until(ExpectedConditions.elementToBeClickable(instanceNumberInputField));
         instanceNumberInputField.sendKeys(calculator.getNumberOfInstances());
-
 
         //Operation_System/Software
         WebElement op = webDriverWait().until(ExpectedConditions.elementToBeClickable(operatingSystem));
@@ -169,19 +164,6 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
 
     }
 
-    public GoogleCloudPricingCalculatorPage switchToFrame(WebDriver driver) {
-        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
-//        driver.switchTo().frame(0);
-//        driver.switchTo().frame("myFrame");
-        WebElement iframe1 = webDriverWait().until(ExpectedConditions.presenceOfElementLocated(By.xpath("//devsite-iframe//iframe")));
-        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", iframe1);
-        driver.switchTo().frame(iframe1);
-        WebElement iframe2 = webDriverWait().until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div//iframe[@id='myFrame']")));
-        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", iframe2);
-        driver.switchTo().frame(iframe2);
-        logger.info("switch to frame");
-        return new GoogleCloudPricingCalculatorPage(driver);
-    }
 
     public YopmailHandler openNewWindow(WebDriver driver){
         driver.switchTo().newWindow(WindowType.TAB);
@@ -197,11 +179,13 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
     }
 
 
-    public GoogleCloudPricingCalculatorPage emailEstimate(){
+    public YopmailHandler emailEstimate(){
         webDriverWait().until(ExpectedConditions.elementToBeClickable(emailEstimateButton));
         emailEstimateButton.click();
         logger.info("email Estimate button clicked");
-        return this;
+        driver.switchTo().newWindow(WindowType.TAB);
+        logger.info("New window opened");
+        return new YopmailHandler(driver);
     }
 
     public YopmailHandler sendEmail(WebDriver driver){

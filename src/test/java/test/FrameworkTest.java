@@ -18,12 +18,9 @@ public class FrameworkTest extends CommonConditions{
         googleCloudSearchPage.openPage()
                 .searchCalculator()
                 .openCalculator()
-                .switchToFrame(driver)
                 .setEstimate(GoogleCloudPricingCalculatorCreator.withProperty())
                 .emailEstimate()
-                .openNewWindow(driver)
                 .getNewYopmail()
-                .backSwitchToCalcPage(driver)
                 .sendEmail(driver);
 
         YopmailHandler yopmailHandler = new YopmailHandler(driver);
