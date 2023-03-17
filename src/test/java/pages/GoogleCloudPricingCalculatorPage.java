@@ -92,12 +92,12 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
         operatingSystemType.click();
 
         // Provisioning Model
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(provisioningModel));
-//        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", provisioningModel);
-//        provisioningModel.click();
-//        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicProvisionSelector(calculator.getProvisioningModel()))));
-//        WebElement provisionType = driver.findElement(By.xpath(dynamicProvisionSelector(calculator.getProvisioningModel())));
-//        provisionType.click();
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(provisioningModel));
+        javascriptExecutor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", provisioningModel);
+        provisioningModel.click();
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicProvisionSelector(calculator.getProvisioningModel()))));
+        WebElement provisionType = driver.findElement(By.xpath(dynamicProvisionSelector(calculator.getProvisioningModel())));
+        provisionType.click();
 //
 //        //Series
 //        webDriverWait().until(ExpectedConditions.elementToBeClickable(seriesDropdown));
