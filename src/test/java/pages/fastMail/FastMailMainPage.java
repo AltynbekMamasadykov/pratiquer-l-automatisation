@@ -17,9 +17,6 @@ public class FastMailMainPage extends AbstractBasePage {
     @FindBy(xpath = "//label[text()='Unread']")
     private WebElement unreadButton;
 
-//    @FindBy(xpath = "//li[@class='v-MailboxItem u-list-item is-unread']")
-//    private List<WebElement> listOfUnreadMails;
-
     @FindBy(xpath = "//button[text()='Show details']")
     private WebElement showDetailsButton;
 
@@ -40,8 +37,6 @@ public class FastMailMainPage extends AbstractBasePage {
     public void checkMail(){
 
 
-//        WebElement mailboxSourceBadge = new WebDriverWait(driver, Duration.ofSeconds(40))
-//                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='v-MailboxSource-badge']")));
         webDriverWait().until(ExpectedConditions.elementToBeClickable(inboxButton));
         inboxButton.click();
         webDriverWait().until(ExpectedConditions.elementToBeClickable(unreadButton));
