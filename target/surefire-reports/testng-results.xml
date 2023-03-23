@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-23T16:33:34 KGT" name="Frame" finished-at="2023-03-23T16:34:31 KGT" duration-ms="57443">
+  <suite started-at="2023-03-23T16:43:07 KGT" name="Frame" finished-at="2023-03-23T16:43:57 KGT" duration-ms="49735">
     <groups>
     </groups>
-    <test started-at="2023-03-23T16:33:34 KGT" name="FullFrameTest" finished-at="2023-03-23T16:34:31 KGT" duration-ms="57443">
+    <test started-at="2023-03-23T16:43:07 KGT" name="FullFrameTest" finished-at="2023-03-23T16:43:57 KGT" duration-ms="49735">
       <class name="test.FrameworkTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.FrameworkTest@105fece7]" started-at="2023-03-23T16:33:34 KGT" name="setUp" finished-at="2023-03-23T16:33:36 KGT" duration-ms="2700" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.FrameworkTest@105fece7]" started-at="2023-03-23T16:43:08 KGT" name="setUp" finished-at="2023-03-23T16:43:10 KGT" duration-ms="2150" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="FullFrameworkTest()[pri:0, instance:test.FrameworkTest@105fece7]" started-at="2023-03-23T16:33:36 KGT" name="FullFrameworkTest" finished-at="2023-03-23T16:34:31 KGT" duration-ms="54399" status="PASS">
+        <test-method signature="FullFrameworkTest()[pri:0, instance:test.FrameworkTest@105fece7]" started-at="2023-03-23T16:43:10 KGT" name="FullFrameworkTest" finished-at="2023-03-23T16:43:57 KGT" duration-ms="47261" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FullFrameworkTest -->
-        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:test.FrameworkTest@105fece7]" started-at="2023-03-23T16:34:31 KGT" name="stopBrowser" finished-at="2023-03-23T16:34:31 KGT" duration-ms="310" status="PASS">
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:test.FrameworkTest@105fece7]" started-at="2023-03-23T16:43:57 KGT" name="stopBrowser" finished-at="2023-03-23T16:43:57 KGT" duration-ms="295" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopBrowser -->
