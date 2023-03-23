@@ -4,6 +4,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.protonMail.ProtonMailLoginPage;
 import service.UserCreator;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
 
 
 public class UserAccessTest extends CommonConditions{
@@ -17,7 +20,7 @@ public class UserAccessTest extends CommonConditions{
                 .openPage()
                 .login(testUser)
                 .getLoggedInUserName();
-        Assert.assertTrue(loggedInUserName.contains(testUser.getUsername()));
+        assertThat(loggedInUserName, is(equalTo(testUser.getUsername())));
     }
 
     @Test(priority = 1)

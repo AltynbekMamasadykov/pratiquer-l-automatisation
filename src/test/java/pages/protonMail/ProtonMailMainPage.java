@@ -15,8 +15,13 @@ public class ProtonMailMainPage extends AbstractBasePage {
     public static final String TESTDATA_USER_MAILSUBJECT = "testdata.user.emailSubject";
     public static final String TESTDATA_USER_MAILTEXT = "testdata.user.emailText";
 
-    @FindBy(xpath = "//button[@data-testid='heading:userdropdown']/span[1]")
-    private WebElement profileName;
+
+
+    @FindBy(xpath = "//button[@data-testid='heading:userdropdown']")
+    private WebElement profileButton;
+
+    @FindBy(xpath = "//span[@data-testid='userdropdown:label:email']")
+    private WebElement loggedInUserEmail;
 
     @FindBy(xpath = "//button[text()='New message']")
     private WebElement newMessageButton;
@@ -41,8 +46,10 @@ public class ProtonMailMainPage extends AbstractBasePage {
     }
 
     public String getLoggedInUserName(){
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(profileName));
-        return profileName.getText();
+        webDriverWait().until(ExpectedConditions.elementToBeClickable(profileButton));
+        profileButton.click();
+        webDriverWait().until(ExpectedConditions.visibilityOf(loggedInUserEmail));
+        return loggedInUserEmail.getText();
     }
 
     public ProtonMailMainPage clickNewEmailButton(){
