@@ -1,15 +1,13 @@
 package pages.fastMail;
-
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.AbstractBasePage;
-
+import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class FastMailMainPage extends AbstractBasePage {
 
@@ -21,9 +19,6 @@ public class FastMailMainPage extends AbstractBasePage {
 
     @FindBy(xpath = "//li[@class='v-MailboxItem u-list-item is-unread']")
     private List<WebElement> listOfUnreadMails;
-
-    @FindBy(xpath = "//span[@class='v-MailboxSource-badge']")
-    private WebElement mailboxSourceBadge;
 
     @FindBy(xpath = "//button[text()='Show details']")
     private WebElement showDetailsButton;
@@ -44,8 +39,9 @@ public class FastMailMainPage extends AbstractBasePage {
 
     public void checkMail(){
 
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        webDriverWait().until(ExpectedConditions.visibilityOf(mailboxSourceBadge));
+
+        WebElement mailboxSourceBadge = new WebDriverWait(driver, Duration.ofSeconds(40))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='v-MailboxSource-badge']")));
         webDriverWait().until(ExpectedConditions.elementToBeClickable(inboxButton));
         inboxButton.click();
         webDriverWait().until(ExpectedConditions.elementToBeClickable(unreadButton));

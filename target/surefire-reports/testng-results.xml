@@ -1,49 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-23T16:19:44 KGT" name="Smoke" finished-at="2023-03-23T16:20:13 KGT" duration-ms="28591">
+  <suite started-at="2023-03-23T16:33:34 KGT" name="Frame" finished-at="2023-03-23T16:34:31 KGT" duration-ms="57443">
     <groups>
     </groups>
-    <test started-at="2023-03-23T16:19:44 KGT" name="smokeTestUserLogin" finished-at="2023-03-23T16:20:13 KGT" duration-ms="28591">
-      <class name="test.UserAccessTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.UserAccessTest@482cd91f]" started-at="2023-03-23T16:19:44 KGT" name="setUp" finished-at="2023-03-23T16:19:47 KGT" duration-ms="3075" status="PASS">
+    <test started-at="2023-03-23T16:33:34 KGT" name="FullFrameTest" finished-at="2023-03-23T16:34:31 KGT" duration-ms="57443">
+      <class name="test.FrameworkTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.FrameworkTest@105fece7]" started-at="2023-03-23T16:33:34 KGT" name="setUp" finished-at="2023-03-23T16:33:36 KGT" duration-ms="2700" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="oneCanLoginProtoMail()[pri:0, instance:test.UserAccessTest@482cd91f]" started-at="2023-03-23T16:19:47 KGT" name="oneCanLoginProtoMail" finished-at="2023-03-23T16:20:02 KGT" duration-ms="14465" status="PASS">
+        <test-method signature="FullFrameworkTest()[pri:0, instance:test.FrameworkTest@105fece7]" started-at="2023-03-23T16:33:36 KGT" name="FullFrameworkTest" finished-at="2023-03-23T16:34:31 KGT" duration-ms="54399" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- oneCanLoginProtoMail -->
-        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:test.UserAccessTest@482cd91f]" started-at="2023-03-23T16:20:02 KGT" name="stopBrowser" finished-at="2023-03-23T16:20:02 KGT" duration-ms="292" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- stopBrowser -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.UserAccessTest@482cd91f]" started-at="2023-03-23T16:20:02 KGT" name="setUp" finished-at="2023-03-23T16:20:03 KGT" duration-ms="1374" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="inCorrectCredentialLogin()[pri:1, instance:test.UserAccessTest@482cd91f]" started-at="2023-03-23T16:20:03 KGT" name="inCorrectCredentialLogin" finished-at="2023-03-23T16:20:08 KGT" duration-ms="4996" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- inCorrectCredentialLogin -->
-        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:test.UserAccessTest@482cd91f]" started-at="2023-03-23T16:20:08 KGT" name="stopBrowser" finished-at="2023-03-23T16:20:09 KGT" duration-ms="164" status="PASS">
+        </test-method> <!-- FullFrameworkTest -->
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:test.FrameworkTest@105fece7]" started-at="2023-03-23T16:34:31 KGT" name="stopBrowser" finished-at="2023-03-23T16:34:31 KGT" duration-ms="310" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopBrowser -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.UserAccessTest@482cd91f]" started-at="2023-03-23T16:20:09 KGT" name="setUp" finished-at="2023-03-23T16:20:10 KGT" duration-ms="1258" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="emptyCredentialLogin()[pri:2, instance:test.UserAccessTest@482cd91f]" started-at="2023-03-23T16:20:10 KGT" name="emptyCredentialLogin" finished-at="2023-03-23T16:20:13 KGT" duration-ms="2818" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- emptyCredentialLogin -->
-        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:test.UserAccessTest@482cd91f]" started-at="2023-03-23T16:20:13 KGT" name="stopBrowser" finished-at="2023-03-23T16:20:13 KGT" duration-ms="107" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- stopBrowser -->
-      </class> <!-- test.UserAccessTest -->
-    </test> <!-- smokeTestUserLogin -->
-  </suite> <!-- Smoke -->
+      </class> <!-- test.FrameworkTest -->
+    </test> <!-- FullFrameTest -->
+  </suite> <!-- Frame -->
 </testng-results>

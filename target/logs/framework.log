@@ -1,6 +1,8 @@
-2023-03-23 16:19:49,427 INFO  [main] Login page opened
-2023-03-23 16:19:51,380 INFO  [main] Login performed
-2023-03-23 16:20:05,349 INFO  [main] Login page opened
-2023-03-23 16:20:06,808 INFO  [main] Login with incorrect credentials performed
-2023-03-23 16:20:11,778 INFO  [main] Login page opened
-2023-03-23 16:20:13,124 INFO  [main] Login with empty credentials performed
+2023-03-23 16:33:38,871 INFO  [main] Login page opened
+2023-03-23 16:33:40,517 INFO  [main] Login performed
+2023-03-23 16:33:50,366 INFO  [main] New email button clicked
+2023-03-23 16:33:51,708 INFO  [main] Email sent
+2023-03-23 16:33:51,761 INFO  [main] New window opened
+2023-03-23 16:33:52,589 INFO  [main] Login page opened
+2023-03-23 16:33:54,268 INFO  [main] Login performed
+2023-03-23 16:34:30,428 INFO  [main] Unread mail opened to read
