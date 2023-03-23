@@ -1,0 +1,13 @@
+pages\protonMail\ProtonMailMainPage.class
+test\CommonConditions.class
+test\FrameworkTest.class
+pages\fastMail\FastMailLoginPage.class
+service\UserCreator.class
+pages\protonMail\ProtonMailLoginPage.class
+util\TestListener.class
+pages\AbstractBasePage.class
+service\TestDataReader.class
+test\UserAccessTest.class
+driver\DriverSingleton.class
+pages\fastMail\FastMailMainPage.class
+model\User.class
