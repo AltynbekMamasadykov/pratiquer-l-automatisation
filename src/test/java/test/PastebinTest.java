@@ -3,6 +3,7 @@ import homepage.PastebinHomePage;
 import homepage.PastebinResultPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -21,7 +22,9 @@ public class PastebinTest {
 
     @BeforeClass(description = "Create driver and open max size window")
     public void browserSetup() {
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
 
