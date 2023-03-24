@@ -1,4 +1,5 @@
 package test;
+import org.openqa.selenium.chrome.ChromeOptions;
 import page.Yopmail.YopmailHomePage;
 import page.Yopmail.YopmailIndex;
 import page.cloudCalculator.CloudPricingCalculatorPage;
@@ -50,7 +51,9 @@ public class CloudTest {
 
     @BeforeClass(description = "Create driver and open max size window")
     public void browserSetup() {
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
 
