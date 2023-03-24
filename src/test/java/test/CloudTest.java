@@ -5,6 +5,7 @@ import homepage.CloudSearchPage;
 import homepage.CloudSearchResultPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -39,12 +40,13 @@ public class CloudTest {
 
     private static final String TOTAL_COST_EXPECTED = "USD 1,081.20 per 1 month";
 
-
     private WebDriver driver;
 
     @BeforeClass(description = "Create driver and open max size window")
     public void browserSetup() {
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
 
