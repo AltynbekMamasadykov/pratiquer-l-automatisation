@@ -1,0 +1,13 @@
+2023-03-29 14:54:17,201 INFO  [main] Searching started
+2023-03-29 14:54:23,722 INFO  [main] Calculator page has been opened
+2023-03-29 14:54:23,846 INFO  [main] switch to frame
+2023-03-29 14:54:32,839 INFO  [main] New Estimation set
+2023-03-29 14:54:33,112 INFO  [main] email Estimate button clicked
+2023-03-29 14:54:33,489 INFO  [main] New window opened
+2023-03-29 14:54:37,408 INFO  [main] Yopmail page has been opened
+2023-03-29 14:54:39,672 INFO  [main] New email from Yopmail has been generated
+2023-03-29 14:54:39,882 INFO  [main] email address copied to clipboard
+2023-03-29 14:54:40,059 INFO  [main] Switch back to Calculator page
+2023-03-29 14:54:40,858 INFO  [main] sent email of Estimation
+2023-03-29 14:54:40,938 INFO  [main] getTotalEstimateCost
+2023-03-29 14:54:43,987 INFO  [main] Get result from Yopmail inbox

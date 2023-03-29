@@ -1,9 +1,13 @@
 package pages;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.time.Duration;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class YopmailHandler extends AbstractBasePage{
 
@@ -22,7 +26,8 @@ public class YopmailHandler extends AbstractBasePage{
     private WebElement refreshInboxButton;
 
 
-    @FindBy(xpath = "//*[contains(text(), 'Estimated Monthly Cost:')]")
+//    @FindBy(xpath = "//*[contains(text(), 'Estimated Monthly Cost:')]")
+    @FindBy(xpath = "//h2")
     private WebElement estimationResultLine;
 
 
@@ -89,7 +94,10 @@ public class YopmailHandler extends AbstractBasePage{
         checkInboxButton.click();
         webDriverWait().until(ExpectedConditions.elementToBeClickable(refreshInboxButton));
         refreshInboxButton.click();
+        driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
+        refreshInboxButton.click();
         driver.switchTo().frame("ifmail");
+        webDriverWait().until(ExpectedConditions.visibilityOf(estimationResultLine));
         logger.info("Get result from Yopmail inbox");
         return getTotalEstimatedCost();
 
