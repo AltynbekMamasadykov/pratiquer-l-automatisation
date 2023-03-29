@@ -36,7 +36,6 @@ public class FastMailMainPage extends AbstractBasePage {
 
     public void checkMail(){
 
-
         webDriverWait().until(ExpectedConditions.elementToBeClickable(inboxButton));
         inboxButton.click();
         webDriverWait().until(ExpectedConditions.elementToBeClickable(unreadButton));

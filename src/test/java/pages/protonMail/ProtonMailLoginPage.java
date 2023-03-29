@@ -62,6 +62,7 @@ public class ProtonMailLoginPage extends AbstractBasePage {
     }
 
     public boolean loginWithEmptyCredentials(){
+
         webDriverWait().until(ExpectedConditions.elementToBeClickable(userNameField));
         userNameField.sendKeys("");
         webDriverWait().until(ExpectedConditions.elementToBeClickable(passwordField));

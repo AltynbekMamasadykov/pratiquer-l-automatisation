@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.AbstractBasePage;
 
+
 public class FastMailLoginPage extends AbstractBasePage {
 
     public FastMailLoginPage(WebDriver driver) {
@@ -21,7 +22,7 @@ public class FastMailLoginPage extends AbstractBasePage {
     @FindBy(xpath = "//input[@name='password']")
     private WebElement passwordField;
 
-    @FindBy(xpath = "//button[text()='Log in']")
+    @FindBy(xpath = "//span[text()='Log in']")
     private WebElement LogInButton;
 
 
