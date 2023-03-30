@@ -26,8 +26,8 @@ public class YopmailHandler extends AbstractBasePage{
     private WebElement refreshInboxButton;
 
 
-//    @FindBy(xpath = "//*[contains(text(), 'Estimated Monthly Cost:')]")
-    @FindBy(xpath = "//h2")
+    @FindBy(xpath = "//*[contains(text(), 'Estimated Monthly Cost:')]")
+//    @FindBy(xpath = "//h2")
     private WebElement estimationResultLine;
 
 
@@ -94,7 +94,7 @@ public class YopmailHandler extends AbstractBasePage{
         checkInboxButton.click();
         webDriverWait().until(ExpectedConditions.elementToBeClickable(refreshInboxButton));
         refreshInboxButton.click();
-        driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
         refreshInboxButton.click();
         driver.switchTo().frame("ifmail");
         webDriverWait().until(ExpectedConditions.visibilityOf(estimationResultLine));
