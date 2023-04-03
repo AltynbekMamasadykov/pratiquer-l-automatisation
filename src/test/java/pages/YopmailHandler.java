@@ -1,13 +1,9 @@
 package pages;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import java.time.Duration;
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 public class YopmailHandler extends AbstractBasePage{
 
@@ -27,7 +23,6 @@ public class YopmailHandler extends AbstractBasePage{
 
 
     @FindBy(xpath = "//*[contains(text(), 'Estimated Monthly Cost:')]")
-//    @FindBy(xpath = "//h2")
     private WebElement estimationResultLine;
 
 
@@ -55,12 +50,6 @@ public class YopmailHandler extends AbstractBasePage{
         return this;
     }
 
-    public YopmailHandler clickCheckInboxButton(){
-        webDriverWait().until(ExpectedConditions.elementToBeClickable(checkInboxButton));
-        checkInboxButton.click();
-        return this;
-    }
-
     public String getTotalEstimatedCost(){
         return webDriverWait().until(ExpectedConditions.visibilityOf(estimationResultLine)).getText();
     }
@@ -76,15 +65,6 @@ public class YopmailHandler extends AbstractBasePage{
         logger.info("Switch back to Calculator page");
         return new GoogleCloudPricingCalculatorPage(driver);
 
-    }
-
-    public GoogleCloudPricingCalculatorPage backSwitchToCalcPage(WebDriver driver){
-        ArrayList<String> tabs = new ArrayList<> (driver.getWindowHandles());
-        driver.switchTo().window(tabs.get(0));
-        driver.switchTo().frame(0);
-        driver.switchTo().frame("myFrame");
-        logger.info("Switch back to Calculator page");
-        return new GoogleCloudPricingCalculatorPage(driver);
     }
 
     public String checkAndGetResult(WebDriver driver){

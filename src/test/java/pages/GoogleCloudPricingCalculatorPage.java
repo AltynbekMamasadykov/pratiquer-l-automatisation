@@ -4,7 +4,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 
 
 public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
@@ -42,7 +41,7 @@ public class GoogleCloudPricingCalculatorPage extends AbstractBasePage{
     @FindBy(xpath = "(//label[text()='Committed usage']/..)[1]")
     private WebElement committedUsageDropdown;
 
-    @FindBy(xpath = "//*[contains(text(),'Add to Estimate')][1]")
+    @FindBy(xpath = "//button[@ng-click='listingCtrl.addComputeServer(ComputeEngineForm);']")
     private WebElement addToEstimateButton;
 
     @FindBy(xpath = "//*[contains(text(), 'Total Estimated Cost:')]")

@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-30T11:38:01 KGT" name="All tests" finished-at="2023-03-30T11:38:35 KGT" duration-ms="33680">
+  <suite started-at="2023-04-03T16:19:27 KGT" name="Smoke" finished-at="2023-04-03T16:19:57 KGT" duration-ms="29305">
     <groups>
     </groups>
-    <test started-at="2023-03-30T11:38:01 KGT" name="All tests" finished-at="2023-03-30T11:38:35 KGT" duration-ms="33680">
-      <class name="test.FrameworkTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.FrameworkTest@105fece7]" started-at="2023-03-30T11:38:01 KGT" name="setUp" finished-at="2023-03-30T11:38:03 KGT" duration-ms="1975" status="PASS">
+    <test started-at="2023-04-03T16:19:27 KGT" name="smokeTestCalculatorPage" finished-at="2023-04-03T16:19:57 KGT" duration-ms="29305">
+      <class name="test.CalculatorPageSmokeTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.CalculatorPageSmokeTest@105fece7]" started-at="2023-04-03T16:19:27 KGT" name="setUp" finished-at="2023-04-03T16:19:30 KGT" duration-ms="2369" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="fullFrameworkTest()[pri:0, instance:test.FrameworkTest@105fece7]" started-at="2023-03-30T11:38:03 KGT" name="fullFrameworkTest" finished-at="2023-03-30T11:38:35 KGT" duration-ms="31253" status="PASS">
+        <test-method signature="smokeTestCalculatorPage()[pri:0, instance:test.CalculatorPageSmokeTest@105fece7]" started-at="2023-04-03T16:19:30 KGT" name="smokeTestCalculatorPage" finished-at="2023-04-03T16:19:56 KGT" duration-ms="26353" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fullFrameworkTest -->
-        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:test.FrameworkTest@105fece7]" started-at="2023-03-30T11:38:35 KGT" name="stopBrowser" finished-at="2023-03-30T11:38:35 KGT" duration-ms="413" status="PASS">
+        </test-method> <!-- smokeTestCalculatorPage -->
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:test.CalculatorPageSmokeTest@105fece7]" started-at="2023-04-03T16:19:56 KGT" name="stopBrowser" finished-at="2023-04-03T16:19:57 KGT" duration-ms="549" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopBrowser -->
-      </class> <!-- test.FrameworkTest -->
-    </test> <!-- All tests -->
-  </suite> <!-- All tests -->
+      </class> <!-- test.CalculatorPageSmokeTest -->
+    </test> <!-- smokeTestCalculatorPage -->
+  </suite> <!-- Smoke -->
 </testng-results>

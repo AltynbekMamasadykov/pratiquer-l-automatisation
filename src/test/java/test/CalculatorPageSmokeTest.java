@@ -3,7 +3,7 @@ import org.testng.annotations.Test;
 import pages.GoogleCloudSearchPage;
 import service.GoogleCloudPricingCalculatorCreator;
 
-public class TestCalculatorPage extends CommonConditions{
+public class CalculatorPageSmokeTest extends CommonConditions{
 
     @Test
     public void smokeTestCalculatorPage(){

@@ -1,8 +1,8 @@
 pages\GoogleCloudSearchResultPage.class
+test\CalculatorPageSmokeTest.class
 pages\GoogleCloudPricingCalculatorPage.class
 pages\YopmailHandler.class
 test\CommonConditions.class
-test\TestCalculatorPage.class
 test\FrameworkTest.class
 model\GoogleCloudPricingCalculator.class
 pages\GoogleCloudSearchPage.class
